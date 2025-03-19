@@ -114,8 +114,8 @@ def deleteFleets(fleetIds: list[str]):
 
 
 @app.resolver(type_name="Mutation", field_name="updateFleet")
-def udpateFleet(fleetId: str, fleetName: str, carIds: list[str] = []):
-    logger.info(f"udpateFleet: fleetId={fleetId}")
+def updateFleet(fleetId: str, fleetName: str, carIds: list[str] = []):
+    logger.info(f"updateFleet: fleetId={fleetId}")
 
     response = ddbTable.update_item(
         Key={"fleetId": fleetId},
